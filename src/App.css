@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* ── Coinbase brand tokens ───────────────────────────── */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-cb-blue:       #0052FF;
+  --color-cb-blue-dark:  #0039B3;
+  --color-cb-blue-light: #EBF0FF;
+  --color-cb-green:      #05B169;
+  --color-cb-red:        #F05252;
+  --color-cb-dark:       #050F19;
+  --color-cb-gray:       #5B616E;
+  --color-cb-muted:      #98A1B3;
+  --color-cb-border:     #E8E9EA;
+  --color-cb-surface:    #F9FAFB;
+}
+
+/* ── Marquee / ticker animation ───────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@utility animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+/* ── Slow spin (React logo) ───────────────────────────── */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow infinite 20s linear;
+}
+
+/* ── Chart gradient helper ────────────────────────────── */
+.chart-gradient-green { stop-color: #05B169; }
+.chart-gradient-red   { stop-color: #F05252; }
